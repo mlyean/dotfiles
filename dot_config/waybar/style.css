@@ -1,0 +1,232 @@
+@import "./rose-pine.css";
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, "Fira Code", monospace;
+    font-size: 10px;
+}
+
+window#waybar {
+    color: @foam;
+    background-color: @base;
+    border-bottom: 1px solid @highlightHigh;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -1px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+#workspaces button {
+    padding: 0 1px;
+    color: @text;
+    background-color: @overlay;
+    box-shadow: inset 0 -1px @highlightHigh;
+}
+
+#workspaces button:hover {
+    background: @highlightMed;
+}
+
+#workspaces button.focused {
+    background-color: @highlightHigh;
+    box-shadow: inset 0 -1px @rose;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    background-color: @overlay;
+    color: @text;
+    padding: 2px 6px;
+    margin: 2px 0;
+    border-radius: 8px;
+}
+
+#mode {
+    box-shadow: inset 0 -1px @rose;
+    border-radius: 0;
+}
+
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio {
+    padding-right: 8px;
+}
+
+#clock {
+    border-radius: 0px 8px 8px 0px;
+}
+
+#idle_inhibitor {
+    border-radius: 8px 0px 0px 8px;
+}
+
+#clock:hover,
+#pulseaudio:hover,
+#network:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#battery:hover,
+#idle_inhibitor:hover {
+    background-color: @highlightMed;
+}
+
+#window,
+#workspaces {
+    margin: 0 2px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock {
+    color: @gold;
+}
+
+#battery {
+    color: @iris;
+}
+
+#pulseaudio {
+    color: @love;
+}
+
+#network {
+    color: @gold;
+}
+
+#cpu {
+    color: @rose;
+}
+
+#memory {
+    color: @foam;
+}
+
+#temperature {
+    color: @pine;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: @highlightHigh;
+    color: @love;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+    padding-right: 15px;
+}
+
+#power-profiles-daemon.performance {
+    background-color: #f53c3c;
+    color: #e0def4;
+}
+
+#power-profiles-daemon.balanced {
+    background-color: #2980b9;
+    color: #e0def4;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: #2ecc71;
+    color: #e0def4;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#temperature.critical {
+    background-color: @love;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @love;
+}
+
+#idle_inhibitor.activated {
+    color: @gold;
+    background-color: @highlightHigh;
+}
+
+#privacy {
+    padding: 0;
+}
+
+#privacy-item {
+    padding: 0 2px;
+    color: white;
+}
+
+#privacy-item.screenshare {
+    background-color: #cf5700;
+}
+
+#privacy-item.audio-in {
+    background-color: #1ca000;
+}
+
+#privacy-item.audio-out {
+    background-color: #0069d4;
+}
