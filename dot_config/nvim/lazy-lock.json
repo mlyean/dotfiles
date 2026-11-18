@@ -1,8 +1,13 @@
 {
+  "fzf": { "branch": "master", "commit": "4499615fe9c06c0651aa5650e5d0d0a5face99a8" },
+  "fzf.vim": { "branch": "master", "commit": "fe5f1fd45418c1a4d905f44a59357008058cc789" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
-  "lualine.nvim": { "branch": "master", "commit": "47f91c416daef12db467145e16bed5bbfe00add8" },
-  "nvim-autopairs": { "branch": "master", "commit": "d9e44e54384e5b0f3536339c65484f2e41b528e3" },
-  "nvim-web-devicons": { "branch": "master", "commit": "8dcb311b0c92d460fac00eac706abd43d94d68af" },
-  "rose-pine": { "branch": "main", "commit": "cf2a288696b03d0934da713d66c6d71557b5c997" },
-  "vimtex": { "branch": "master", "commit": "aed184681f177ae6071e56cd7a2b9441261fca52" }
+  "lean.nvim": { "branch": "main", "commit": "5f759412341a370ac7a9e3308fb99d597f2970b3" },
+  "lualine.nvim": { "branch": "master", "commit": "221ce6b2d999187044529f49da6554a92f740a96" },
+  "nvim-autopairs": { "branch": "master", "commit": "3172f40c16563db871a58f20d205c710ad782311" },
+  "nvim-surround": { "branch": "main", "commit": "1098d7b3c34adcfa7feb3289ee434529abd4afd1" },
+  "nvim-web-devicons": { "branch": "master", "commit": "0dc0cfb0c6858041174a53c7aa4adaf65e994b3c" },
+  "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },
+  "rose-pine": { "branch": "main", "commit": "ff483051a47e27d84bdef47703538df1ed9f4a47" },
+  "vimtex": { "branch": "master", "commit": "cedc0a172e40d0d1d49670dd0d936d6e2df61de7" }
 }

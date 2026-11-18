@@ -21,8 +21,9 @@ set $menu fuzzel
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output eDP-1 bg /home/mlyean/Pictures/wallpaper/rose-pine/something-beautiful-in-nature.jpg fill
-output HDMI-A-1 bg /home/mlyean/Pictures/wallpaper/rose-pine/leafy.png fill
+# output eDP-1 bg /home/mlyean/Pictures/wallpaper/rose-pine/illustration/something-beautiful-in-nature.jpg fill
+# output HDMI-A-1 bg /home/mlyean/Pictures/wallpaper/rose-pine/os/arch-btw.png fill
+exec waypaper --restore
 # output DP-1 bg /usr/share/backgrounds/archlinux/awesome.png fill
 #
 # Example configuration:
@@ -62,6 +63,12 @@ exec swayidle -w \
 #
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
+# input "1386:886:Wacom_Intuos_BT_S_Pen" map_to_output eDP-1
+input "1386:886:Wacom_Intuos_BT_S_Pen" map_to_output HDMI-A-1
+
+for_window [class="zoom"] floating enable
+for_window [title="Zoom Meeting.*"] floating disable
+for_window [title="Zoom Meeting.*"] inhibit_idle visible
 
 ### Key bindings
 #
@@ -84,7 +91,9 @@ exec swayidle -w \
     floating_modifier $mod normal
 
     # Reload the configuration file
-    bindsym --locked $mod+Shift+c reload
+    bindsym $mod+Shift+c reload
+
+    bindsym --locked $mod+Shift+m output eDP-1 toggle
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+q exec swaymsg exit
@@ -310,6 +319,7 @@ seat seat0 xcursor_theme 'BreezeX-RosePine-Linux' 12
 
 exec kanshi
 exec dbus-update-activation-environment --all
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec gnome-keyring-daemon --start --components=secrets
 exec nm-applet
 exec blueman-applet

@@ -110,6 +110,10 @@
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "format": " {:%m/%d %H:%M:%S}"
     },
+    // "custom/clock": {
+    //     "exec": "date '+  %m/%d %H:%M:%S'",
+    //     "interval": 1,
+    // },
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false
@@ -158,8 +162,9 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
+        "interval": 1,
+        "format-wifi": "{essid} ({signalStrength}%)   {bandwidthTotalBytes}",
+        "format-ethernet": "{ipaddr}/{cidr}   {bandwidthTotalBytes}",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",

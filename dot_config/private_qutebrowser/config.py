@@ -6,6 +6,7 @@ config.load_autoconfig()
 # set the palette you'd like to use
 # valid options are 'rose-pine', 'rose-pine-moon' and 'rose-pine-dawn'
 # last argument (optional, default is False): enable the plain look for the menu rows
-rosepine.setup(c, 'rose-pine-moon', True)
+# rosepine.setup(c, 'rose-pine-moon', True)
 
 config.set("colors.webpage.darkmode.enabled", True)
+config.set("qt.force_software_rendering", "chromium")

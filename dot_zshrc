@@ -23,7 +23,9 @@ bindkey "^[[B" down-line-or-beginning-search
 setopt share_history
 setopt histignorespace
 
+alias icat='kitten icat'
 alias ls='ls --color=auto'
+alias zathura='GDK_BACKEND=x11 zathura'
 export MANPAGER="less -R --use-color -Dd+r -Du+b"
 export MANROFFOPT="-P -c"
 
